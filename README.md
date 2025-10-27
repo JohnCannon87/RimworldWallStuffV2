@@ -11,12 +11,12 @@ THIS IS CONFIGURABLE IN THE MOD SETTINGS IF YOU DON'T WANT TO DO THAT !!!
 [list]
 [*]Uses Rimworlds built in wall mounting mechanism where possible (Hence why this isn't save compatible)
 [*]Removes Wall Mounted Firefoam Poppers (Use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3452778089]Wall Mounted Firefoam[/url] instead it's better than what I had)
-[/list]
 [*]Removes Wall Mounted Televisions (Use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3582096423&searchtext=wall+television]Wall Televisions[/url] instead it's better than what I had) - I patch this to use my extended wall mounting system that needs walls behind all parts of an item not just one cell
 [*]Removes Wall Mounted Batteries (Use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2514057480]Wallmounted Battery[/url] instead it's better than what I had)
 [*]Removes Wall Mounted Switches (Use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3540826161]Wall mounted Switch[/url] instead it's better than what I had)
 [*]Removes Wall Replimat (It's now built in yay!)
 [*]Simplifed Wall Charger to only have one charger that charges all Mechs, more unbalanced but a lot simpler.
+[/list]
 
 [h3]Features[/h3]
 [list]
@@ -62,6 +62,8 @@ When I first created the original Wall Stuff mod not a lot of other things were 
 [list]
 [*]Improve performance of the Heater/Cooler/Climate Controller
 [*]Balance the Replicator better
+[*]Add some nicer preview images in this description
+[*]Improve the graphics (If anyone wants to work with me on this please reach out I'm a terrible graphic artist, I can't pay anyone but obviously more than happy to share publishing the mod so you get credit.)
 [/list]
 
 [h2]Source Code[/h2]
