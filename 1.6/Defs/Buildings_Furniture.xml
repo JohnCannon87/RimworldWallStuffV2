@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="WallBuildingBase">
+        <defName>Wall_Hifi</defName>
+        <label>wall mounted hifi</label>
+        <description>A small, high fidelity audio system can tune into radio broadcasts, or use the standard ubiquitous data cards.</description>
+        <graphicData>
+            <texPath>WallHifi/WallHifi</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+            <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+            <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+            <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+        </graphicData>
+        <uiIconPath>WallHifi/WallHifi_UI</uiIconPath>
+        <rotatable>true</rotatable>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <socialPropernessMatters>true</socialPropernessMatters>
+        <fillPercent>0.35</fillPercent>
+        <defaultPlacingRot>South</defaultPlacingRot>
+        <thingCategories>
+            <li>BuildingsJoy</li>
+        </thingCategories>
+        <costList>
+            <Steel>50</Steel>
+            <Plasteel>5</Plasteel>
+            <ComponentIndustrial>10</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <Beauty>1</Beauty>
+            <Mass>8</Mass>
+            <JoyGainFactor>1.4</JoyGainFactor>
+        </statBases>
+        <size>(1,1)</size>
+        <placeWorkers>
+            <li>Placeworker_AttachedToWall</li>
+        </placeWorkers>
+        <designationCategory>Joy</designationCategory>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>80</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+        </comps>
+        <tradeTags>
+            <li>Television</li>
+        </tradeTags>
+        <researchPrerequisites>
+            <li>MicroelectronicsBasics</li>
+        </researchPrerequisites>
+    <specialDisplayRadius>8</specialDisplayRadius>
+    </ThingDef>
+
+</Defs>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Check if a specific mod is loaded, using the Mod ID -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+          <li>Vanilla Nutrient Paste Expanded: Reimagined Progression</li>
+      </mods>
+    <!-- If the mod is loaded, apply the following patch -->
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="VNPE_NutrientPasteTap">
+              <defName>VNPERP_NutrientPasteTapDT_WallMounted</defName>
+              <label>diluted wall mounted nutrient paste tap</label>
+              <description>A hopper-like storage basin meant to hold dispensed diluted nutrient paste meal from the vats. Can be used by colonists and prisoners. Nutrient paste meal dispensed and ready for pick-up can deteriorate, Wall mounted for easier placement.</description>
+              <graphicData>
+                <texPath>WallPaste/Progression/WallPasteTapTD</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1, 1)</drawSize>
+                <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+                <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+                <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+                <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+              </graphicData>
+              <uiIconPath>WallPaste/Progression/WallPasteTapTD_UI</uiIconPath>
+              <statBases>
+                <MaxHitPoints>200</MaxHitPoints>
+                <WorkToBuild>1350</WorkToBuild>
+              </statBases>
+              <size>(1,1)</size>
+              <costList>
+                <Steel>30</Steel>
+                <ComponentIndustrial>1</ComponentIndustrial>
+              </costList>
+              <comps Inherit="False">
+                <li Class="PipeSystem.CompProperties_Resource">
+                  <pipeNet>VNPE_NutrientPasteNet</pipeNet>
+                </li>
+                <li Class="CompProperties_Flickable"/>
+                <li Class="CompProperties_Power">
+                  <compClass>CompPowerTrader</compClass>
+                  <basePowerConsumption>60</basePowerConsumption>
+                </li>
+              </comps>
+              <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+              <researchPrerequisites Inherit="False">
+                <li>VNPERPNutrientPasteTD</li>
+              </researchPrerequisites>
+              <modExtensions>
+                <li Class="VNPEReimaginedProgression.VNPERPDefModExtension">
+                  <customMeal>MealNutrientPasteDT</customMeal>
+                  <storageCost>0.66667</storageCost>
+                </li>
+              </modExtensions>
+              <altitudeLayer>BuildingOnTop</altitudeLayer>
+              <passability>Standable</passability>
+              <placeWorkers>
+                  <li>Placeworker_AttachedToWall</li>
+              </placeWorkers>
+              <building>
+                  <isEdifice>false</isEdifice>
+                  <isAttachment>true</isAttachment>
+              </building>
+              <fillPercent>0.5</fillPercent>
+              <interactionCellOffset>(0,0,0)</interactionCellOffset>
+            </ThingDef>  
+          </value>
+        </li>
+        
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="VNPE_NutrientPasteTap">
+              <defName>VNPERP_NutrientPasteTap1T_WallMounted</defName>
+              <label>simple wall mounted nutrient paste tap</label>
+              <description>A hopper-like storage basin meant to hold dispensed simple nutrient paste meal from the vats. Can be used by colonists and prisoners. Nutrient paste meal dispensed and ready for pick-up can deteriorate, Wall mounted for easier placement.</description>
+              <graphicData>
+                <texPath>WallPaste/Progression/WallPasteTapT1</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1, 1)</drawSize>
+                <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+                <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+                <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+                <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+              </graphicData>
+              <uiIconPath>WallPaste/Progression/WallPasteTapT1_UI</uiIconPath>
+              <statBases>
+                <MaxHitPoints>275</MaxHitPoints>
+                <WorkToBuild>2250</WorkToBuild>
+              </statBases>
+              <size>(1,1)</size>
+              <costList>
+                <Steel>120</Steel>
+                <ComponentIndustrial>4</ComponentIndustrial>
+              </costList>
+              <comps Inherit="False">
+                <li Class="PipeSystem.CompProperties_Resource">
+                  <pipeNet>VNPE_NutrientPasteNet</pipeNet>
+                </li>
+                <li Class="CompProperties_Flickable"/>
+                <li Class="CompProperties_Power">
+                  <compClass>CompPowerTrader</compClass>
+                  <basePowerConsumption>120</basePowerConsumption>
+                </li>
+              </comps>
+              <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+              <researchPrerequisites Inherit="False">
+                <li>VNPERPNutrientPasteT1</li>
+              </researchPrerequisites>
+              <modExtensions>
+                <li Class="VNPEReimaginedProgression.VNPERPDefModExtension">
+                  <customMeal>MealNutrientPaste1T</customMeal>
+                  <storageCost>1.66667</storageCost>
+                </li>
+              </modExtensions>
+              <altitudeLayer>BuildingOnTop</altitudeLayer>
+              <passability>Standable</passability>
+              <placeWorkers>
+                  <li>Placeworker_AttachedToWall</li>
+              </placeWorkers>
+              <building>
+                  <isEdifice>false</isEdifice>
+                  <isAttachment>true</isAttachment>
+              </building>
+              <fillPercent>0.5</fillPercent>
+              <interactionCellOffset>(0,0,0)</interactionCellOffset>
+            </ThingDef>  
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="VNPE_NutrientPasteTap">
+              <defName>VNPERP_NutrientPasteTap2T_WallMounted</defName>
+              <label>fine wall mounted nutrient paste tap</label>
+              <description>A hopper-like storage basin meant to hold dispensed fine nutrient paste meal from the vats. Can be used by colonists and prisoners. Nutrient paste meal dispensed and ready for pick-up can deteriorate, Wall mounted for easier placement.</description>
+              <graphicData>
+                <texPath>WallPaste/Progression/WallPasteTapT2</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1, 1)</drawSize>
+                <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+                <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+                <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+                <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+              </graphicData>
+              <uiIconPath>WallPaste/Progression/WallPasteTapT2_UI</uiIconPath>
+              <statBases>
+                <MaxHitPoints>325</MaxHitPoints>
+                <WorkToBuild>2700</WorkToBuild>
+              </statBases>
+              <size>(1,1)</size>
+              <costList>
+                <Steel>150</Steel>
+                <ComponentIndustrial>5</ComponentIndustrial>
+                <Plasteel>25</Plasteel>
+                <ComponentSpacer>1</ComponentSpacer>
+              </costList>
+              <comps Inherit="False">
+                <li Class="PipeSystem.CompProperties_Resource">
+                  <pipeNet>VNPE_NutrientPasteNet</pipeNet>
+                </li>
+                <li Class="CompProperties_Flickable"/>
+                <li Class="CompProperties_Power">
+                  <compClass>CompPowerTrader</compClass>
+                  <basePowerConsumption>140</basePowerConsumption>
+                </li>
+              </comps>
+              <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+              <researchPrerequisites Inherit="False">
+                <li>VNPERPNutrientPasteT2</li>
+              </researchPrerequisites>
+              <modExtensions>
+                <li Class="VNPEReimaginedProgression.VNPERPDefModExtension">
+                  <customMeal>MealNutrientPaste2T</customMeal>
+                  <storageCost>2.5</storageCost>
+                </li>
+              </modExtensions>
+              <altitudeLayer>BuildingOnTop</altitudeLayer>
+              <passability>Standable</passability>
+              <placeWorkers>
+                  <li>Placeworker_AttachedToWall</li>
+              </placeWorkers>
+              <building>
+                  <isEdifice>false</isEdifice>
+                  <isAttachment>true</isAttachment>
+              </building>
+              <fillPercent>0.5</fillPercent>
+              <interactionCellOffset>(0,0,0)</interactionCellOffset>
+            </ThingDef>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="VNPE_NutrientPasteTap">
+              <defName>VNPERP_NutrientPasteTap3T_WallMounted</defName>
+              <label>lavish wall mounted nutrient paste tap</label>
+              <description>A hopper-like storage basin meant to hold dispensed lavish nutrient paste meal from the vats. Can be used by colonists and prisoners. Nutrient paste meal dispensed and ready for pick-up can deteriorate, Wall mounted for easier placement.</description>
+              <graphicData>
+                <texPath>WallPaste/Progression/WallPasteTapT3</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1, 1)</drawSize>
+                <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+                <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+                <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+                <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+              </graphicData>
+              <uiIconPath>WallPaste/Progression/WallPasteTapT3_UI</uiIconPath>
+              <statBases>
+                <MaxHitPoints>375</MaxHitPoints>
+                <WorkToBuild>3600</WorkToBuild>
+              </statBases>
+              <size>(1,1)</size>
+              <costList>
+                <Steel>175</Steel>
+                <ComponentIndustrial>6</ComponentIndustrial>
+                <Plasteel>75</Plasteel>
+                <ComponentSpacer>2</ComponentSpacer>
+              </costList>
+              <comps Inherit="False">
+                <li Class="PipeSystem.CompProperties_Resource">
+                  <pipeNet>VNPE_NutrientPasteNet</pipeNet>
+                </li>
+                <li Class="CompProperties_Flickable"/>
+                <li Class="CompProperties_Power">
+                  <compClass>CompPowerTrader</compClass>
+                  <basePowerConsumption>175</basePowerConsumption>
+                </li>
+              </comps>
+              <constructionSkillPrerequisite>16</constructionSkillPrerequisite>
+              <researchPrerequisites Inherit="False">
+                <li>VNPERPNutrientPasteT3</li>
+              </researchPrerequisites>
+              <modExtensions>
+                <li Class="VNPEReimaginedProgression.VNPERPDefModExtension">
+                  <customMeal>MealNutrientPaste3T</customMeal>
+                  <storageCost>3.33333</storageCost>
+                </li>
+              </modExtensions>
+              <altitudeLayer>BuildingOnTop</altitudeLayer>
+              <passability>Standable</passability>
+              <placeWorkers>
+                  <li>Placeworker_AttachedToWall</li>
+              </placeWorkers>
+              <building>
+                  <isEdifice>false</isEdifice>
+                  <isAttachment>true</isAttachment>
+              </building>
+              <fillPercent>0.5</fillPercent>
+              <interactionCellOffset>(0,0,0)</interactionCellOffset>
+            </ThingDef>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Check if Vanilla Nutrient Paste Expanded is loaded -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Nutrient Paste Expanded</li>
+    </mods>
+
+    <!-- If the mod is loaded, apply these patches -->
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <!-- Add a Name attribute to VNPE_NutrientPasteTap so it can be used as a parent -->
+        <li Class="PatchOperationAttributeAdd">
+          <xpath>Defs/ThingDef[defName="VNPE_NutrientPasteTap"]</xpath>
+          <attribute>Name</attribute>
+          <value>VNPE_NutrientPasteTap</value>
+          <success>Always</success>
+        </li>
+
+        <!-- Add the wall-mounted nutrient paste tap -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="VNPE_NutrientPasteTap">
+              <defName>WallMountedNutrientPasteTap</defName>
+              <label>wall mounted nutrient paste tap</label>
+              <description>A hopper-like storage basin meant to hold dispensed nutrient paste meal from the vats. Can be used by colonists and prisoners. Nutrient paste meal dispensed and ready for pick-up can deteriorate. Wall mounted for easier placement.</description>
+              <graphicData>
+                <texPath>WallPaste/WallPasteTap</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1,1)</drawSize>
+                <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+                <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+                <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+                <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+              </graphicData>
+              <uiIconPath>WallPaste/WallPasteTap_UI</uiIconPath>
+              <minifiedDef>MinifiedThing</minifiedDef>
+              <fillPercent>0.5</fillPercent>
+              <statBases>
+                <MaxHitPoints>250</MaxHitPoints>
+                <WorkToBuild>2000</WorkToBuild>
+                <Flammability>0.5</Flammability>
+                <Mass>5</Mass>
+              </statBases>
+              <size>(1,1)</size>
+              <thingCategories>
+                <li>BuildingsProduction</li>
+              </thingCategories>
+              <building>
+                <isEdifice>false</isEdifice>
+                <isAttachment>true</isAttachment>
+                <isMealSource>true</isMealSource>
+                <wantsHopperAdjacent>false</wantsHopperAdjacent>
+                <soundDispense>DispensePaste</soundDispense>
+                <forceShowRoomStats>true</forceShowRoomStats>
+                <buildingTags>
+                  <li>Production</li>
+                </buildingTags>
+                <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+              </building>
+              <placeWorkers>
+                <li>Placeworker_AttachedToWall</li>
+                <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+              </placeWorkers>
+              <interactionCellOffset>(0,0,0)</interactionCellOffset>
+              <altitudeLayer>BuildingOnTop</altitudeLayer>
+              <passability>Standable</passability>
+            </ThingDef>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

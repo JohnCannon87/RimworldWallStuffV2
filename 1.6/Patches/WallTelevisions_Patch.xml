@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Wall Televisions</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="XER_WallFlatscreenTelevision"]/placeWorkers/li[text()="Placeworker_AttachedToWall"]</xpath>
+          <value>
+            <li>WallStuff.Placeworker_AttachedToWallMultiCell</li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="XER_WallMegascreenTelevision"]/placeWorkers/li[text()="Placeworker_AttachedToWall"]</xpath>
+          <value>
+            <li>WallStuff.Placeworker_AttachedToWallMultiCell</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

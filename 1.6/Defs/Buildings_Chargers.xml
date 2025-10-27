@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="BaseMechCharger">
+    <defName>wallcharger</defName>
+    <label>wall recharger</label>
+    <description>the ultimate in mech charging miniaturisation, charges all mechanoids and with a new compressor stores three wastepacks instead of 2 !</description>
+    <graphicData>
+      <texPath>WallCharger/WallCharger</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <drawOffsetNorth>(0,0,0.9)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+    </graphicData>
+    <passability>Standable</passability>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <building>
+      <requiredMechWeightClasses>
+        <li>Light</li>
+        <li>Medium</li>
+        <li>Heavy</li>
+        <li>UltraHeavy</li>
+      </requiredMechWeightClasses>
+      <barDrawData>
+        <north>
+          <preRotationOffset>(0.0,1.05)</preRotationOffset>
+          <size>(0.4,0.12)</size>
+        </north>
+        <south>
+          <preRotationOffset>(0.0,0.70)</preRotationOffset>
+          <size>(0.4,0.12)</size>
+        </south>
+        <east>
+          <preRotationOffset>(0.2,-0.87)</preRotationOffset>
+          <size>(0.4,0.12)</size>
+        </east>
+        <west>
+          <preRotationOffset>(-0.2,-0.87)</preRotationOffset>
+          <size>(0.4,0.12)</size>
+        </west>
+      </barDrawData>
+      <isEdifice>false</isEdifice>
+      <isAttachment>true</isAttachment>
+    </building>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>BasicMechtech</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_ThingContainer">
+        <compClass>CompThingContainer</compClass>
+        <stackLimit>3</stackLimit>
+        <drawContainedThing>false</drawContainedThing>
+        <dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>400</basePowerConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
